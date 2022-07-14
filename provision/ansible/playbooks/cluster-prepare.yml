@@ -64,12 +64,6 @@
           loop: "{{ public_ssh_keys | default([]) }}"
     - name: System Configuration (1)
       block:
-        - name: System Configuration (1) | Disable firewalld
-          ansible.builtin.systemd:
-            service: firewalld.service
-            enabled: false
-            masked: true
-            state: stopped
         - name: System Configuration (1) | Enable fstrim
           ansible.builtin.systemd:
             service: fstrim.timer
