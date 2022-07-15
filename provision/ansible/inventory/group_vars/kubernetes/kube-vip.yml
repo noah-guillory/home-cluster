@@ -1,3 +1,3 @@
 ---
 # (string) The ARP address kube-vip broadcasts
-kubevip_address: "172.16.11.2"
+kubevip_address: "172.16.11.254"
