@@ -1,15 +1,15 @@
 resource "proxmox_vm_qemu" "control-node-1" {
-  name        = "k8s-control-0"
+  name        = "k8s-control-1"
   target_node = "proxmox"
 
-  clone = "fedora-36-cloudinit-template"
+  clone = "ubuntu-2204-cloudinit-template"
 
   onboot   = true
   oncreate = true
   agent    = 1
 
   memory = 2048
-  vcpus  = 1
+  vcpus  = 2
 
   ipconfig0 = "gw=172.16.0.1,ip=172.16.11.2/16"
   network {
@@ -25,17 +25,17 @@ resource "proxmox_vm_qemu" "control-node-1" {
 }
 
 resource "proxmox_vm_qemu" "control-node-2" {
-  name        = "k8s-control-1"
+  name        = "k8s-control-2"
   target_node = "proxmox"
 
-  clone = "fedora-36-cloudinit-template"
+  clone = "ubuntu-2204-cloudinit-template"
 
   onboot   = true
   oncreate = true
   agent    = 1
 
   memory = 2048
-  vcpus  = 1
+  vcpus  = 2
 
   ipconfig0 = "gw=172.16.0.1,ip=172.16.11.3/16"
   network {
@@ -51,10 +51,10 @@ resource "proxmox_vm_qemu" "control-node-2" {
 }
 
 resource "proxmox_vm_qemu" "worker-node-1" {
-  name        = "k8s-0"
+  name        = "k8s-worker-1"
   target_node = "proxmox"
 
-  clone = "fedora-36-cloudinit-template"
+  clone = "ubuntu-2204-cloudinit-template"
 
   onboot   = true
   oncreate = true
@@ -77,10 +77,10 @@ resource "proxmox_vm_qemu" "worker-node-1" {
 }
 
 resource "proxmox_vm_qemu" "worker-node-2" {
-  name        = "k8s-1"
+  name        = "k8s-worker-2"
   target_node = "proxmox"
 
-  clone = "fedora-36-cloudinit-template"
+  clone = "ubuntu-2204-cloudinit-template"
 
   onboot   = true
   oncreate = true

@@ -11,3 +11,5 @@ collections:
 roles:
   - src: xanmanning.k3s
     version: v3.2.0
+  - src: weareinteractive.apt
+    version: 2.12.0
