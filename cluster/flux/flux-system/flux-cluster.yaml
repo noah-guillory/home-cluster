@@ -2,7 +2,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: GitRepository
 metadata:
-  name: home-cluster
+  name: flux-cluster
   namespace: flux-system
 spec:
   interval: 10m
